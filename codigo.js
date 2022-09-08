@@ -19,6 +19,18 @@ class CartElement {
     }
 }
 
+//EVA OR EMAIL VERIFICATION API
+
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  fetch("https://api.eva.pingutil.com/email?email=${email_adress}", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
 
 // const
 const americanDollars = Intl.NumberFormat('en-US');
@@ -205,6 +217,7 @@ function createProductItems() {
 
 }
 
+/*
 //Buy items in cart alert
 let buy=document.getElementById("buy");
 buy.onclick=()=>{
@@ -213,4 +226,14 @@ Swal.fire(
     'Have a nice day!',
     'success'
   )
+}
+*/
+
+
+let popup = document.getElementById("myForm");
+
+let buy=document.getElementById("buy");
+buy.onclick=()=>{
+    myForm.style.display = "block";
+
 }
