@@ -26,7 +26,7 @@ var requestOptions = {
     redirect: 'follow'
   };
 
-  fetch("https://api.eva.pingutil.com/email?email=examplemail234324324%@gmail.com", requestOptions)
+  fetch("https://api.eva.pingutil.com/email?email=test@mail7.io", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
