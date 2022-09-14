@@ -19,24 +19,7 @@ class CartElement {
     }
 }
 
-<<<<<<< HEAD
 // const and let
-=======
-//EVA OR EMAIL VERIFICATION API
-
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-
-  fetch("https://api.eva.pingutil.com/email?email=test@mail7.io", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-
-
-// const
->>>>>>> ac7a1c67922e6c67b23fd9b0ab84ac0dffc3025d
 const americanDollars = Intl.NumberFormat('en-US');
 
 let productsJSON = [];
@@ -232,16 +215,9 @@ window.location.replace(checkout)
 
 //Using fetch to load products.json
 
-<<<<<<< HEAD
 async function getJSON(){
     const resp= await fetch('products.json');
     const data= await resp.json();
     productsJSON = data;
     createProductItems();
-=======
-let buy=document.getElementById("buy");
-buy.onclick=()=>{
-    myForm.style.display = "block";
-
->>>>>>> ac7a1c67922e6c67b23fd9b0ab84ac0dffc3025d
 }
