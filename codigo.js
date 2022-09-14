@@ -19,25 +19,11 @@ class CartElement {
     }
 }
 
-//EVA OR EMAIL VERIFICATION API
-
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-
-  fetch("https://api.eva.pingutil.com/email?email=${email_adress}", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-
-
-// const
+// const and let
 const americanDollars = Intl.NumberFormat('en-US');
 
-const products = [];
+let productsJSON = [];
 
-// Entregable operadores avanzados *** Ejemplo operador lógico OR 
 let cartElements = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 
 const productContainer = document.getElementById('product-container').getElementsByClassName('row');
@@ -50,14 +36,14 @@ const footerContainer = document.querySelector("#footer")
 
 // Function execution
 
-loadProducts();
 loadCart();
 drawCart();
 createProductItems();
+getJSON();
 
 
 // Functions
-
+/*
 function loadProducts () {
     products.push (new Product (1, 'Orchid Lady of the Night', 1.2, 'imagen/ladyofthenight.png'));
     products.push (new Product (2, 'Orchid Lady Slipper', 2.5, 'imagen/ladyslipperorchid.png'));
@@ -66,6 +52,7 @@ function loadProducts () {
     products.push (new Product (5, 'Dragon Mouth Orchid', 2.5, 'imagen/dragon.png'));
     products.push (new Product (6, 'Acuna Star Orchid', 2.9, 'imagen/acuna.png'));
 }
+*/
 
 function loadCart () {
     /*let cartEls = new CartElement (
@@ -208,7 +195,7 @@ function createCard(product) {
 function createProductItems() {
     container.innerHTML = "";
 
-    products.forEach(
+    productsJSON.forEach(
         (product) => {
             let cardContainer = createCard(product);
             container.append(cardContainer);
@@ -217,23 +204,20 @@ function createProductItems() {
 
 }
 
-/*
-//Buy items in cart alert
+//Buy items in cart --> checkout form
+let checkout= "checkout.html"
+
 let buy=document.getElementById("buy");
 buy.onclick=()=>{
-Swal.fire(
-    'Thank you for buying with us.',
-    'Have a nice day!',
-    'success'
-  )
+window.location.replace(checkout)
 }
-*/
 
 
-let popup = document.getElementById("myForm");
+//Using fetch to load products.json
 
-let buy=document.getElementById("buy");
-buy.onclick=()=>{
-    myForm.style.display = "block";
-
+async function getJSON(){
+    const resp= await fetch('products.json');
+    const data= await resp.json();
+    productsJSON = data;
+    createProductItems();
 }

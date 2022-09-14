@@ -1,0 +1,38 @@
+[{
+    "id":1,
+    "name": "Orchid Lady of the Night",
+    "price": 1.2,
+    "photo": "imagen/ladyofthenight.png"
+},
+{
+    "id": 2,
+    "name": "Orchid Lady Slipper",
+    "price": 2.5,
+    "photo": "imagen/ladyslipperorchid.png"
+},
+{
+    "id": 3,
+    "name": "Spider Orchid",
+    "price": 0.75,
+    "photo": "imagen/spider_orchid.png"
+},
+{
+    "id" :4,
+    "name": "Clamshell Orchid",
+    "price": 1.0,
+    "photo": "imagen/clamshell.png"
+},
+{
+    "id": 5,
+    "name": "Dragon Mouth Orchid",
+    "price": 2.5,
+    "photo": "imagen/dragon.png"
+},
+{
+    "id": 6,
+    "name": "Acuna Star Orchid",
+    "price": 2.8,
+    "photo": "imagen/acuna.png"
+}
+
+]
