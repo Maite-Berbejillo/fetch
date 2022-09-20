@@ -42,7 +42,7 @@ createProductItems();
 getJSON();
 
 
-// Functions
+// Function to load products manually without products.json
 /*
 function loadProducts () {
     products.push (new Product (1, 'Orchid Lady of the Night', 1.2, 'imagen/ladyofthenight.png'));
@@ -63,6 +63,7 @@ function loadCart () {
     cartElements.push(cartEls);*/
 }
 
+//Function to create cart
 
 function drawCart () {
 
@@ -119,7 +120,6 @@ function drawCart () {
     }
 
     //Clear local storage when cart is empty
-    // Entregable operadores avanzados *** Ejemplo operador lógico AND
     cartElements.length== 0 && localStorage.clear ();
 }
 
@@ -131,7 +131,7 @@ function removeProduct (elementBeingDeleted) {
 }
 
 
-//Cards
+//Cards creation
 
 function createCard(product) {
     //Button
@@ -165,7 +165,7 @@ function createCard(product) {
     cardContainer.className = "col-xs-6 col-sm-3 col-md-3";
     cardContainer.append(card);
 
-    //Events
+    //Events (add item to cart)
     addButton.onclick = () => {
         
         let existingElement = cartElements.find((element) => element.product.id == product.id)
@@ -209,9 +209,16 @@ let checkout= "checkout.html"
 
 let buy=document.getElementById("buy");
 buy.onclick=()=>{
-window.location.replace(checkout)
+ if (cartElements.length!== 0){
+    window.location.replace(checkout)
+}else{
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please add items to your cart first!',
+      })
 }
-
+}
 
 //Using fetch to load products.json
 

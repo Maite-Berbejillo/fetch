@@ -14,11 +14,13 @@
 
 p {
     color: #1B2430;
+    font-family: 'Noto Serif Georgian', serif;
 }
 
 
 main {
     padding-bottom: 5vh;
+    font-family: 'Noto Serif Georgian', serif;
 }
 
 .center {

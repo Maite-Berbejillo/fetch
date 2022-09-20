@@ -6,7 +6,7 @@ const nombre = document.getElementById("name")
 const email = document.getElementById("email")
 const pass = document.getElementById("password")
 const form = document.getElementById("form")
-const parrafo = document.getElementById("warnings")
+const paragraph = document.getElementById("warnings")
 
 //Event
 form.addEventListener("submit", e=>{
@@ -14,7 +14,7 @@ form.addEventListener("submit", e=>{
     let warnings = ""
     let enter = false
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-    parrafo.innerHTML = ""
+    paragraph.innerHTML = ""
     if(nombre.value.length <6){
         warnings += `Put a valid name. <br>`
         enter = true
@@ -29,7 +29,7 @@ form.addEventListener("submit", e=>{
     }
     
     if(enter){
-        parrafo.innerHTML = warnings
+        paragraph.innerHTML = warnings
     }else{
         Swal.fire(
             'Your order will be shipped soon',
